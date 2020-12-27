@@ -2,20 +2,47 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+export default class App extends React.Component{
+    render(){
+        const name = '01 - Blue Behind Green Bloches';
+        return (
+            <View style={styles.container}>
+                <View style={styles.innerContainer}/>
+                <Text style={styles.title}>
+                    <Text style={styles.subtitle}>Playing:</Text> {name}
+                </Text>
+            </View>
+        )
+    }
+
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container:{
+        margin:10,
+        marginTop:100,
+        backgroundColor:'#e67e22',
+        borderRadius:5
+    },
+    innerContainer:{
+        backgroundColor:'#d35400',
+        height:50,
+        width:150,
+        borderTopLeftRadius:5,
+        borderBottomLeftRadius:5
+    },
+    title:{
+        fontSize:18,
+        fontWeight:'200',
+        color:'#fff',
+        position:'absolute',
+        backgroundColor:'transparent',
+        top:12,
+        left:10,
+    },
+    subtitle:{
+        fontWeight:'bold'
+    }
+
 });
